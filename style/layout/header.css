@@ -1,0 +1,117 @@
+header {
+  .container--header-nav {
+    width: 100%;
+  }
+  .container-contacts {
+    background-color: var(--bg--header);
+    width: 100%;
+  }
+
+  .connection--header {
+    display: flex;
+    gap: 0.9375rem;
+
+    max-width: 1280px;
+    padding: 12px 0;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    .contacts {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      color: var(--base-white);
+
+      span {
+        color: var(--base-white);
+      }
+
+      .social-icon {
+        width: 1em !important;
+        border: none !important;
+        height: 1em !important;
+        display: inline !important;
+        margin: 0 0.07em !important;
+        background: none !important;
+      }
+    }
+  }
+
+  .site-menu-content--header {
+    width: 100%;
+
+
+    .container--header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: var(--base-white);
+      margin-left: auto;
+      max-width: 1280px;
+      padding-block: 10px;
+
+      .logotip {
+        width: max-content;
+        height: max-content;
+
+        img {
+          max-width: 215px;
+        }
+      }
+
+      .nav-menu {
+        ul {
+          display: flex;
+          gap: 20px;
+
+          .page-blue-text {
+            border-bottom: 2px solid var(--hover-a--header);
+            a {
+              color: var(--hover-a--header) !important;
+            }
+          }
+          li {
+            a {
+              position: relative;
+              color: var(--black);
+              transition: color 0.3s ease;
+              padding: 5px 0;
+            }
+
+            a::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              height: 2px;
+              width: 100%;
+              background-color: var(--hover-a--header);
+              transform: scaleX(0);
+              transform-origin: left;
+              transition: transform 0.5s ease, transform-origin 0s ease 0.3s;
+            }
+
+            a:hover {
+              color: var(--hover-a--header);
+            }
+
+            a:hover::after {
+              transform: scaleX(1);
+              transform-origin: left;
+              transition: transform 0.5s ease;
+            }
+
+            a:not(:hover)::after {
+              transform: scaleX(0);
+              transform-origin: right;
+              transition: transform 0.5s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "./style/base/reset.css";
+@import "./style/components/colors.css";
+@import "./style/layout/footer.css";
+@import "./style/layout/header.css";
+@import "./style/layout/sections.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  flex-shrink: 0;
+  line-height: 1.5;
+  font-family: sans-serif;
+  background-color: var(--base-white);
+  overflow-y: hidden;
+}
