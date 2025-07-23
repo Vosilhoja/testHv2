@@ -21,5 +21,4 @@ body {
   line-height: 1.5;
   font-family: sans-serif;
   background-color: var(--base-white);
-  overflow-y: hidden;
 }
