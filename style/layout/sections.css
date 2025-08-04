@@ -3,7 +3,7 @@
     width: 100%;
     z-index: -10;
     top: 0;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
     position: absolute;
 
@@ -54,26 +54,54 @@
     justify-content: center;
     align-items: center;
 
-    .content-container  {
-      width: 30%;
+    .content-container {
+      width: 50%;
       height: 70vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      border: 2px solid var(--base-white);
-      border-radius: 10px;
       padding: 10px 20px;
       backdrop-filter: blur(30px);
+      animation: border 2s linear infinite;
+      border-radius: 10px;
 
-      a{
-      width: 20px;
-      height: 20px;
+      .content {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        flex-wrap: wrap;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(4, 100px);
+        place-items: center;
+        place-content: center;
       }
 
-      img{
-      flex-wrap: wrap;
-      width: 50px;
-      height: 50px;
+      a {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        place-content: center;
+        place-items: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+          filter: drop-shadow(0 0 10px white) 
+          drop-shadow(0 0 20px white)
+          drop-shadow(0 0 20px white);
+
+          transform: scale(1.2);
+        }
+
+        &:active {
+          transform: scale(0.8);
+        }
+      }
+
+      img {
+        flex-wrap: wrap;
+        width: 50px;
+        height: 50px;
       }
     }
   }
@@ -98,4 +126,39 @@
     opacity: 0;
     transform: scale(1);
   }
+}
+
+@keyframes border {
+  0% {
+    border: 1px solid var(--base-white);
+    box-shadow: 5px 0 10px 5px var(--base-white),
+      0 5px 10px 5px var(--base-white);
+  }
+
+  25% {
+    border: 1px solid var(--base-white);
+    box-shadow: 5px 0 10px 5px var(--base-white),
+      0 -5px 10px 5px var(--base-white);
+  }
+
+  50% {
+    border: 1px solid var(--base-white);
+    box-shadow: 5px 0 10px 5px var(--base-white),
+      -5px 0 10px 5px var(--base-white);
+  }
+
+  75% {
+    border: 1px solid var(--base-white);
+    box-shadow: 0 5px 10px 5px var(--base-white),
+      -5px 0 10px 5px var(--base-white);
+  }
+
+  100% {
+    border: 1px solid var(--base-white);
+    box-shadow: 5px 0 10px 5px var(--base-white),
+      0 5px 10px 5px var(--base-white);
+  }
+}
+
+@keyframes line-animation {
 }
