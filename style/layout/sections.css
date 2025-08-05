@@ -2,8 +2,8 @@
   .bg {
     width: 100%;
     z-index: -10;
-    top: 0;
-    height: 100%;
+    top: 140px;
+    height: 100vh;
     overflow: hidden;
     position: absolute;
 
@@ -12,35 +12,48 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       background-size: cover;
       background-position: center;
       opacity: 0;
-      animation: slide 32s infinite ease-in-out;
+      -webkit-animation: slide 32s infinite ease-in-out;
+              animation: slide 32s infinite ease-in-out;
     }
 
     .one-image {
       z-index: 1;
       background-image: url(../../image/samarqand-bg-two.jpeg);
-      animation-delay: 0s;
+      -webkit-animation-delay: 0s;
+              animation-delay: 0s;
+      width: 100%;
+      height: 100vh;
     }
 
     .two-image {
       z-index: 2;
       background-image: url(../../image/tashkent-bg-one.jpg);
-      animation-delay: 8s;
+      -webkit-animation-delay: 8s;
+              animation-delay: 8s;
+      width: 100%;
+      height: 100vh;
     }
 
     .three-image {
       z-index: 3;
       background-image: url(../../image/uzbekistan-two.jpg);
-      animation-delay: 16s;
+      -webkit-animation-delay: 16s;
+              animation-delay: 16s;
+      width: 100%;
+      height: 100vh;
     }
 
     .four-image {
       z-index: 4;
       background-image: url(../../image/uzbekistan-one.jpg);
-      animation-delay: 24s;
+      -webkit-animation-delay: 24s;
+              animation-delay: 24s;
+      width: 100%;
+      height: 100vh;
     }
   }
 
@@ -50,20 +63,34 @@
     margin: 0;
     top: 2vh;
     min-height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     .content-container {
       width: 50%;
       height: 70vh;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       padding: 10px 20px;
-      backdrop-filter: blur(30px);
-      animation: border 2s linear infinite;
+      -webkit-backdrop-filter: blur(30px);
+              backdrop-filter: blur(30px);
+      -webkit-animation: border 2s linear infinite;
+              animation: border 2s linear infinite;
       border-radius: 10px;
 
       .text .content__title {
@@ -71,42 +98,80 @@
       }
 
       .content {
+        display: -ms-grid;
         display: grid;
         width: 100%;
-        height: 100%;
-        flex-wrap: wrap;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(4, 100px);
+        -ms-grid-columns: auto 15% auto 15% auto 15% auto;
+        grid-template-columns: auto auto auto auto;
+        grid-auto-rows: auto;
+        gap: 15%;
+        row-gap: 20%;
         place-items: center;
-        place-content: center;
       }
 
       a {
         width: 50px;
         height: 50px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         place-content: center;
         place-items: center;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
         transition: all 0.3s ease;
 
         &:hover {
-          filter: drop-shadow(0 0 10px white) drop-shadow(0 0 20px white)
+          -webkit-filter: drop-shadow(0 0 10px white) drop-shadow(0 0 20px white)
+            drop-shadow(0 0 20px white);
+                  filter: drop-shadow(0 0 10px white) drop-shadow(0 0 20px white)
             drop-shadow(0 0 20px white);
 
-          transform: scale(1.2);
+          -webkit-transform: scale(1.2);
+
+              -ms-transform: scale(1.2);
+
+                  transform: scale(1.2);
         }
 
         &:active {
-          transform: scale(0.8);
+          -webkit-transform: scale(0.8);
+              -ms-transform: scale(0.8);
+                  transform: scale(0.8);
         }
       }
 
       img {
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         width: 100%;
         height: 100%;
       }
     }
+  }
+}
+
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  30% {
+    opacity: 0;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -119,49 +184,101 @@
   }
   25% {
     opacity: 1;
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
   }
   30% {
     opacity: 0;
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
   }
   100% {
     opacity: 0;
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes border {
+  0% {
+    border: 1px solid var(--base-white);
+    -webkit-box-shadow: 5px 0 10px 5px var(--base-white),
+      0 5px 10px 5px var(--base-white);
+            box-shadow: 5px 0 10px 5px var(--base-white),
+      0 5px 10px 5px var(--base-white);
+  }
+
+  25% {
+    border: 1px solid var(--base-white);
+    -webkit-box-shadow: 5px 0 10px 5px var(--base-white),
+      0 -5px 10px 5px var(--base-white);
+            box-shadow: 5px 0 10px 5px var(--base-white),
+      0 -5px 10px 5px var(--base-white);
+  }
+
+  50% {
+    border: 1px solid var(--base-white);
+    -webkit-box-shadow: 5px 0 10px 5px var(--base-white),
+      -5px 0 10px 5px var(--base-white);
+            box-shadow: 5px 0 10px 5px var(--base-white),
+      -5px 0 10px 5px var(--base-white);
+  }
+
+  75% {
+    border: 1px solid var(--base-white);
+    -webkit-box-shadow: 0 5px 10px 5px var(--base-white),
+      -5px 0 10px 5px var(--base-white);
+            box-shadow: 0 5px 10px 5px var(--base-white),
+      -5px 0 10px 5px var(--base-white);
+  }
+
+  100% {
+    border: 1px solid var(--base-white);
+    -webkit-box-shadow: 5px 0 10px 5px var(--base-white),
+      0 5px 10px 5px var(--base-white);
+            box-shadow: 5px 0 10px 5px var(--base-white),
+      0 5px 10px 5px var(--base-white);
   }
 }
 
 @keyframes border {
   0% {
     border: 1px solid var(--base-white);
-    box-shadow: 5px 0 10px 5px var(--base-white),
+    -webkit-box-shadow: 5px 0 10px 5px var(--base-white),
+      0 5px 10px 5px var(--base-white);
+            box-shadow: 5px 0 10px 5px var(--base-white),
       0 5px 10px 5px var(--base-white);
   }
 
   25% {
     border: 1px solid var(--base-white);
-    box-shadow: 5px 0 10px 5px var(--base-white),
+    -webkit-box-shadow: 5px 0 10px 5px var(--base-white),
+      0 -5px 10px 5px var(--base-white);
+            box-shadow: 5px 0 10px 5px var(--base-white),
       0 -5px 10px 5px var(--base-white);
   }
 
   50% {
     border: 1px solid var(--base-white);
-    box-shadow: 5px 0 10px 5px var(--base-white),
+    -webkit-box-shadow: 5px 0 10px 5px var(--base-white),
+      -5px 0 10px 5px var(--base-white);
+            box-shadow: 5px 0 10px 5px var(--base-white),
       -5px 0 10px 5px var(--base-white);
   }
 
   75% {
     border: 1px solid var(--base-white);
-    box-shadow: 0 5px 10px 5px var(--base-white),
+    -webkit-box-shadow: 0 5px 10px 5px var(--base-white),
+      -5px 0 10px 5px var(--base-white);
+            box-shadow: 0 5px 10px 5px var(--base-white),
       -5px 0 10px 5px var(--base-white);
   }
 
   100% {
     border: 1px solid var(--base-white);
-    box-shadow: 5px 0 10px 5px var(--base-white),
+    -webkit-box-shadow: 5px 0 10px 5px var(--base-white),
+      0 5px 10px 5px var(--base-white);
+            box-shadow: 5px 0 10px 5px var(--base-white),
       0 5px 10px 5px var(--base-white);
   }
-}
-
-@keyframes line-animation {
 }

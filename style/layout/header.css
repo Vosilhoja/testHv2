@@ -1,12 +1,36 @@
 .header__wrapper {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(44%, var(--bg--header)),
+    color-stop(44%, var(--base-white))
+  );
+  background: -o-linear-gradient(
+    top,
+    var(--bg--header) 44%,
+    var(--base-white) 44%
+  );
   background: linear-gradient(
     to bottom,
     var(--bg--header) 44%,
     var(--base-white) 44%
   );
+}
+
+.burger__menu {
+  display: none;
+}
+
+.burger {
+  display: none;
 }
 
 .container--header-nav {
@@ -21,7 +45,11 @@
 }
 
 .connection--header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 100%;
   max-width: 1280px;
@@ -30,15 +58,30 @@
 }
 
 .contact__item {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .connection--header .contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 0.3125rem;
   width: 50%;
@@ -66,8 +109,14 @@
 }
 
 .site-menu-content--header .container--header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
@@ -77,7 +126,11 @@
 }
 
 .site-menu-content--header .container--header .logotip {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
   height: max-content;
 }
 
@@ -86,26 +139,27 @@
 }
 
 .nav-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 20px;
 }
 
-.nav-menu ul .page-blue-text {
-  border-bottom: 2px solid var(--hover-a--header);
-}
-
 .nav-menu ul .page-blue-text a {
   color: var(--hover-a--header) !important;
+  border-bottom: 2px solid var(--hover-a--header);
 }
 
 .nav-menu ul li a {
   position: relative;
   color: var(--black);
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
   padding: 5px 0;
 }
 
-.nav-menu ul li a::after {
+.nav-menu ul li a:not(.chek)::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -113,9 +167,20 @@
   height: 2px;
   width: 100%;
   background-color: var(--hover-a--header);
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
   transform: scaleX(0);
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
   transform-origin: left;
+  -webkit-transition: -webkit-transform 0.5s ease,
+    -webkit-transform-origin 0s ease 0.3s;
+  transition: -webkit-transform 0.5s ease, -webkit-transform-origin 0s ease 0.3s;
+  -o-transition: transform 0.5s ease, transform-origin 0s ease 0.3s;
   transition: transform 0.5s ease, transform-origin 0s ease 0.3s;
+  transition: transform 0.5s ease, transform-origin 0s ease 0.3s,
+    -webkit-transform 0.5s ease, -webkit-transform-origin 0s ease 0.3s,
+    -ms-transform-origin 0s ease 0.3s;
 }
 
 .nav-menu ul li a:hover {
@@ -123,13 +188,29 @@
 }
 
 .nav-menu ul li a:hover::after {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
   transform: scaleX(1);
+  -webkit-transform-origin: left;
+  -ms-transform-origin: left;
   transform-origin: left;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
   transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
 .nav-menu ul li a:not(:hover)::after {
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
   transform: scaleX(0);
+  -webkit-transform-origin: right;
+  -ms-transform-origin: right;
   transform-origin: right;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
   transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
