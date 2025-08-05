@@ -1,0 +1,56 @@
+$font-base: 'Inter', sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+$font-weight-base: 400;
+$text-color: #333;
+$title-color: #111;
+$bg-color: #fff;
+$accent-color: #0077ff;
+$muted-color: #999;
+body {
+  font-family: $font-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  font-weight: $font-weight-base;
+  background-color: $bg-color;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: $title-color;
+}
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+p {
+  margin-bottom: 1rem;
+}
+a {
+  color: $accent-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: darken($accent-color, 10);
+  text-decoration: underline;
+}
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+li {
+  margin-bottom: 0.5rem;
+}
+.text-center     { text-align: center; }
+.text-right      { text-align: right; }
+.text-left       { text-align: left; }
+.text-uppercase  { text-transform: uppercase; }
+.text-lowercase  { text-transform: lowercase; }
+.text-muted      { color: $muted-color; }
+.text-bold       { font-weight: 700; }
+.text-light      { font-weight: 300; }

@@ -1,0 +1,167 @@
+.registratsiya-vhod {
+  .bg {
+    width: 100%;
+    z-index: -10;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+
+    .bg-photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: slide 32s infinite ease-in-out;
+    }
+
+    .one-image {
+      z-index: 1;
+      background-image: url(../../image/samarqand-bg-two.jpeg);
+      animation-delay: 0s;
+    }
+
+    .two-image {
+      z-index: 2;
+      background-image: url(../../image/tashkent-bg-one.jpg);
+      animation-delay: 8s;
+    }
+
+    .three-image {
+      z-index: 3;
+      background-image: url(../../image/uzbekistan-two.jpg);
+      animation-delay: 16s;
+    }
+
+    .four-image {
+      z-index: 4;
+      background-image: url(../../image/uzbekistan-one.jpg);
+      animation-delay: 24s;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+    margin: 0;
+    top: 2vh;
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content-container {
+      width: 50%;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+      backdrop-filter: blur(30px);
+      animation: border 2s linear infinite;
+      border-radius: 10px;
+
+      .text .content__title {
+        font-size: 3.125rem;
+      }
+
+      .content {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        flex-wrap: wrap;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(4, 100px);
+        place-items: center;
+        place-content: center;
+      }
+
+      a {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        place-content: center;
+        place-items: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+          filter: drop-shadow(0 0 10px white) drop-shadow(0 0 20px white)
+            drop-shadow(0 0 20px white);
+
+          transform: scale(1.2);
+        }
+
+        &:active {
+          transform: scale(0.8);
+        }
+      }
+
+      img {
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  30% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes border {
+  0% {
+    border: 1px solid var(--base-white);
+    box-shadow: 5px 0 10px 5px var(--base-white),
+      0 5px 10px 5px var(--base-white);
+  }
+
+  25% {
+    border: 1px solid var(--base-white);
+    box-shadow: 5px 0 10px 5px var(--base-white),
+      0 -5px 10px 5px var(--base-white);
+  }
+
+  50% {
+    border: 1px solid var(--base-white);
+    box-shadow: 5px 0 10px 5px var(--base-white),
+      -5px 0 10px 5px var(--base-white);
+  }
+
+  75% {
+    border: 1px solid var(--base-white);
+    box-shadow: 0 5px 10px 5px var(--base-white),
+      -5px 0 10px 5px var(--base-white);
+  }
+
+  100% {
+    border: 1px solid var(--base-white);
+    box-shadow: 5px 0 10px 5px var(--base-white),
+      0 5px 10px 5px var(--base-white);
+  }
+}
+
+@keyframes line-animation {
+}

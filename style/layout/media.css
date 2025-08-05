@@ -1,0 +1,135 @@
+@media (max-width: 530px) {
+  .container-contacts {
+    background-color: var(--bg--header);
+    width: 100%;
+    padding-inline: 1.125rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .connection--header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    padding: 12px 0;
+    height: auto;
+  }
+
+  .contact__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .connection--header .contacts {
+    flex-wrap: wrap;
+    width: 100% !important;
+    justify-content: center;
+  }
+
+  .registratsiya-vhod .container .content-container {
+    width: 90%;
+    margin-top: 3.125rem;
+  }
+
+  .site-menu-content--header {
+    min-height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-menu-content--header .container--header {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .site-menu-content--header .container--header .logotip img {
+    display: flex;
+    max-height: 52px;
+    max-width: 100px;
+    width: auto;
+    height: auto;
+  }
+
+  .site-menu-content--header .container--header .logotip {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .burger__menu {
+    display: none;
+  }
+
+  .burger {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5625rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .burger__line {
+    display: inline-block;
+    width: 100%;
+    height: 0.1875rem;
+    background-color: var(--black);
+    position: absolute;
+    left: 0;
+    transition: 0.3s ease;
+  }
+
+  .burger__line:nth-child(1) {
+    top: 0;
+  }
+
+  .burger__line:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .burger__line:nth-child(3) {
+    bottom: 0;
+  }
+
+  .burger__menu:checked ~ .burger .burger__line:nth-child(1) {
+    transform: rotate(45deg);
+    top: 50%;
+    left: 0;
+    transform-origin: center;
+  }
+
+  .burger__menu:checked ~ .burger .burger__line:nth-child(2) {
+    transform: translateX(300%);
+  }
+
+  .burger__menu:checked ~ .burger .burger__line:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 50%;
+    left: 0;
+    transform-origin: center;
+  }
+
+  .nav-menu {
+    transform: translateX(200%);
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+  }
+
+  .burger__menu:checked ~ .nav-menu {
+    transform: translateX(50%);
+  }
+}
